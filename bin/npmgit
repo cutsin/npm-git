@@ -25,9 +25,13 @@ program.command('test')
   .action(function(){
     console.log('[test] Start...')
     cli().test(function(err, stdout, stderr){
-      console.log(stdout)
-      console.warn(stderr)
-      console.log('[test] Success!')
+      if (stderr) {
+        console.warn(stderr)
+        console.log('[test] Failed!')
+      } else {
+        console.log(stdout)
+        console.log('[test] Success!')
+      }
     })
   })
 
