@@ -24,7 +24,9 @@ program.command('test')
   .description('build & npm test your package')
   .action(function(){
     console.log('[test] Start...')
-    cli().test(function(){
+    cli().test(function(err, stdout, stderr){
+      console.log(stdout)
+      console.warn(stderr)
       console.log('[test] Success!')
     })
   })
