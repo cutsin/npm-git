@@ -1,13 +1,10 @@
 {
   "name": "npm-git",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Use git-repo(such as gitlab/bitbucket) for publish private package",
   "preferGlobal": "true",
   "bin": {
     "npmgit": "./bin/npmgit"
-  },
-  "engines": {
-    "node": ">=0.10"
   },
   "keywords": [
     "npm",
