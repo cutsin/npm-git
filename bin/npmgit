@@ -15,7 +15,8 @@ program
 program.command('build')
   .description('clone & compile "./src/*" to "./lib/*"')
   .action(function(){
-    cli().build(function(){
+    cli().build(function(err){
+      if (err) throw err
       console.log('build successed.')
     })
   })
