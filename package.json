@@ -1,6 +1,6 @@
 {
   "name": "npm-git",
-  "version": "0.1.28",
+  "version": "0.1.29",
   "description": "Use git-repo(such as gitlab/bitbucket) for publish private package",
   "preferGlobal": "true",
   "bin": {
