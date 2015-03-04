@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-'use strict'
-
 var fs = require('fs')
 var program = require('commander')
 
@@ -40,7 +38,7 @@ program.command('publish [message]')
   .description('build & push to your remote origin repo...')
   .action(function(message){
     cli().publish(message, function(res){
-      console.log('git+' + res.repo + '#' + res.version + ' is published.')
+      console.log('\x1b[32mgit+' + res.repo + '#' + res.version + '\033[0m is published.')
     })
   })
 
