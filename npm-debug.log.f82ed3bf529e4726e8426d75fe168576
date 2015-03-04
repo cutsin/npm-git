@@ -1,0 +1,104 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/vagrant/.nvm/versions/node/v0.12.0/bin/node',
+1 verbose cli   '/home/vagrant/.nvm/versions/node/v0.12.0/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@2.5.1
+3 info using node@v0.12.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec { raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/vagrant/public/npm-git',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/vagrant/.npm/npm-git/0.1.13/package.tgz not in flight; packing
+9 verbose tar pack [ '/home/vagrant/.npm/npm-git/0.1.13/package.tgz',
+9 verbose tar pack   '/vagrant/public/npm-git' ]
+10 verbose tarball /home/vagrant/.npm/npm-git/0.1.13/package.tgz
+11 verbose folder /vagrant/public/npm-git
+12 info prepublish npm-git@0.1.13
+13 verbose addLocalTarball adding from inside cache /home/vagrant/.npm/npm-git/0.1.13/package.tgz
+14 silly cache afterAdd npm-git@0.1.13
+15 verbose afterAdd /home/vagrant/.npm/npm-git/0.1.13/package/package.json not in flight; writing
+16 verbose afterAdd /home/vagrant/.npm/npm-git/0.1.13/package/package.json written
+17 silly publish { name: 'npm-git',
+17 silly publish   version: '0.1.13',
+17 silly publish   description: 'Use git-repo(such as gitlab/bitbucket) for publish private package',
+17 silly publish   preferGlobal: 'true',
+17 silly publish   bin: { npmgit: './bin/npmgit' },
+17 silly publish   engines: { node: '>=0.10' },
+17 silly publish   keywords: [ 'npm', 'git', 'private', 'publish' ],
+17 silly publish   repository: { type: 'git', url: 'https://github.com/cutsin/npm-git' },
+17 silly publish   author: { name: 'Cutsin', email: 'cutsin@gmail.com' },
+17 silly publish   license: 'MIT',
+17 silly publish   bugs: { url: 'https://github.com/cutsin/npm-git/issues' },
+17 silly publish   homepage: 'https://github.com/cutsin/npm-git',
+17 silly publish   dependencies:
+17 silly publish    { async: '~0.9.0',
+17 silly publish      commander: '~2.6.0',
+17 silly publish      'git-tag': '~0.0.5',
+17 silly publish      ini: '~1.3.2',
+17 silly publish      semver: '~4.2.0' },
+17 silly publish   readme: '# npm-git\r\n\r\n[![NPM Version][npm-image]][npm-url]\r\n[![NPM Downloads][downloads-image]][downloads-url]\r\n[![Build Status][travis-image]][travis-url]\r\n\r\n* use private git(gitLab,bitbucket,etc) instead of npm\r\n* use `npmgit publish` instead of `npm publish` command line, compile & push to your git repo\r\n\r\n## Install\r\n\r\n```\r\nnpm install npm-git -g\r\n```\r\n\r\n## Why?\r\n\r\n想实现私有的npm，通常是2种方案：\r\n\r\n1. npmjs.com即将推出的：[npm private modules](https://www.npmjs.com/private-npm) & [npm Enterprise](https://www.npmjs.com/enterprise)\r\n\r\n\t* [npm private modules](https://www.npmjs.com/private-npm) 可指定有权使用package的用户，也就是你可以`npm publish @mycorp/mypkg`，而mypkg源码可以放在任何git仓库。\r\n\t* [npm Enterprise](https://www.npmjs.com/enterprise) 结合GitHub企业版，更完美了。\r\n\r\n2. [自建npm服务器](http://cnpmjs.org)，维护比较复杂，不推荐。\r\n\r\n而以上2种方案，都还是需要自行管理源码：git仓库，即开发者至少需要2步才能完成1个package的发布：\r\n\r\n1. `git commit && git push`\r\n2. `npm publish`\r\n\r\n__除此之外，就是用npm本身对[Git URLs](https://docs.npmjs.com/files/package.json)的支持了（[《关于commit-ish》](https://github.com/cutsin/Passion-of-the-Cutsin/blob/master/2014/11/commit-ish%E4%B8%AD%E7%9A%84ish%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F.md)）：__\r\n```json\r\ndependencies: {\r\n  "mypkg": "git+https://mycopr/mypkg.git#commit-ish"\r\n}\r\n```\r\n这样成本较低，但看不了依赖、被依赖、安装量等等\r\n\r\n## Usage\r\n\r\npackage.json：\r\n```json\r\n{\r\n  "version": "0.1.8"\r\n}\r\n```\r\n```bash\r\nnpmgit publish \'bug fix\'\r\n// -> git+git@mycorp:/mypkg.git#0.1.8 is published.\r\n```\r\nif git tag is package version，auto increment semver\'s patch to 0.1.9\r\n```bash\r\nnpmgit publish\r\n// -> git+git@mycorp:/mypkg.git#0.1.9 is published.\r\n```\r\n\r\n## Todo\r\n\r\n## License\r\n\r\n[MIT](LICENSE)\r\n\r\n[npm-image]: https://img.shields.io/npm/v/npm-git.svg?style=flat\r\n[npm-url]: https://npmjs.org/package/npm-git\r\n[travis-image]: https://travis-ci.org/cutsin/npm-git.svg\r\n[travis-url]: https://travis-ci.org/cutsin/npm-git\r\n[downloads-image]: https://img.shields.io/npm/dm/npm-git.svg?style=flat\r\n[downloads-url]: https://npmjs.org/package/npm-git\r\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: 'c222d178273e12a63b191f06ffc8c0591c6bbb0d',
+17 silly publish   _id: 'npm-git@0.1.13',
+17 silly publish   scripts: {},
+17 silly publish   _shasum: '6e060aa6574a03cb921bd60c7c8f04c77fc1513e',
+17 silly publish   _from: '.' }
+18 silly mapToRegistry name npm-git
+19 silly mapToRegistry using default registry
+20 silly mapToRegistry registry https://registry.npmjs.org/
+21 silly mapToRegistry uri https://registry.npmjs.org/npm-git
+22 verbose publish registryBase https://registry.npmjs.org/
+23 silly publish uploading /home/vagrant/.npm/npm-git/0.1.13/package.tgz
+24 verbose request uri https://registry.npmjs.org/npm-git
+25 verbose request sending authorization for write operation
+26 info attempt registry request try #1 at 6:28:39 AM
+27 verbose request id d6c71fa81c3a68c2
+28 http request PUT https://registry.npmjs.org/npm-git
+29 http 403 https://registry.npmjs.org/npm-git
+30 verbose headers { date: 'Wed, 04 Mar 2015 06:29:00 GMT',
+30 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+30 verbose headers   'content-type': 'application/json',
+30 verbose headers   'cache-control': 'max-age=60',
+30 verbose headers   'content-length': '5675',
+30 verbose headers   'accept-ranges': 'bytes',
+30 verbose headers   via: '1.1 varnish',
+30 verbose headers   'x-served-by': 'cache-nrt6132-NRT',
+30 verbose headers   'x-cache': 'MISS',
+30 verbose headers   'x-cache-hits': '0',
+30 verbose headers   'x-timer': 'S1425450540.180745,VS0,VE530',
+30 verbose headers   'keep-alive': 'timeout=10, max=50',
+30 verbose headers   connection: 'Keep-Alive' }
+31 verbose request invalidating /home/vagrant/.npm/registry.npmjs.org/npm-git on PUT
+32 error publish Failed PUT 403
+33 verbose stack Error: forbidden cannot modify pre-existing version: 0.1.13
+33 verbose stack old={"name":"npm-git","version":"0.1.13","description":"Use git-repo(such as gitlab/bitbucket) for publish private package","preferGlobal":"true","bin":{"npmgit":"./bin/npmgit"},"engines":{"node":">=0.10"},"keywords":["npm","git","private","publish"],"repository":{"type":"git","url":"https://github.com/cutsin/npm-git"},"author":{"name":"Cutsin","email":"cutsin@gmail.com"},"license":"MIT","bugs":{"url":"https://github.com/cutsin/npm-git/issues"},"homepage":"https://github.com/cutsin/npm-git","dependencies":{"async":"~0.9.0","commander":"~2.6.0","git-tag":"~0.0.5","ini":"~1.3.2","semver":"~4.2.0"},"gitHead":"c222d178273e12a63b191f06ffc8c0591c6bbb0d","_id":"npm-git@0.1.13","scripts":{},"_shasum":"44d8f06a3864eecba20e1e01adc7480cac73bb0c","_from":".","_npmVersion":"2.5.1","_nodeVersion":"0.12.0","_npmUser":{"name":"cutsin","email":"cutsin@gmail.com"},"maintainers":[{"name":"cutsin","email":"cutsin@gmail.com"}],"dist":{"shasum":"44d8f06a3864eecba20e1e01adc7480cac73bb0c","tarball":"http://registry.npmjs.org/npm-git/-/npm-git-0.1.13.tgz"}}
+33 verbose stack new={"name":"npm-git","version":"0.1.13","description":"Use git-repo(such as gitlab/bitbucket) for publish private package","preferGlobal":"true","bin":{"npmgit":"./bin/npmgit"},"engines":{"node":">=0.10"},"keywords":["npm","git","private","publish"],"repository":{"type":"git","url":"https://github.com/cutsin/npm-git"},"author":{"name":"Cutsin","email":"cutsin@gmail.com"},"license":"MIT","bugs":{"url":"https://github.com/cutsin/npm-git/issues"},"homepage":"https://github.com/cutsin/npm-git","dependencies":{"async":"~0.9.0","commander":"~2.6.0","git-tag":"~0.0.5","ini":"~1.3.2","semver":"~4.2.0"},"readme":"# npm-git\u000d\u000a\u000d\u000a[![NPM Version][npm-image]][npm-url]\u000d\u000a[![NPM Downloads][downloads-image]][downloads-url]\u000d\u000a[![Build Status][travis-image]][travis-url]\u000d\u000a\u000d\u000a* use private git(gitLab,bitbucket,etc) instead of npm\u000d\u000a* use `npmgit publish` instead of `npm publish` command line, compile & push to your git repo\u000d\u000a\u000d\u000a## Install\u000d\u000a\u000d\u000a```\u000d\u000anpm install npm-git -g\u000d\u000a```\u000d\u000a\u000d\u000a## Why?\u000d\u000a\u000d\u000a想实现私有的npm，通常是2种方案：\u000d\u000a\u000d\u000a1. npmjs.com即将推出的：[npm private modules](https://www.npmjs.com/private-npm) & [npm Enterprise](https://www.npmjs.com/enterprise)\u000d\u000a\u000d\u000a\u0009* [npm private modules](https://www.npmjs.com/private-npm) 可指定有权使用package的用户，也就是你可以`npm publish @mycorp/mypkg`，而mypkg源码可以放在任何git仓库。\u000d\u000a\u0009* [npm Enterprise](https://www.npmjs.com/enterprise) 结合GitHub企业版，更完美了。\u000d\u000a\u000d\u000a2. [自建npm服务器](http://cnpmjs.org)，维护比较复杂，不推荐。\u000d\u000a\u000d\u000a而以上2种方案，都还是需要自行管理源码：git仓库，即开发者至少需要2步才能完成1个package的发布：\u000d\u000a\u000d\u000a1. `git commit && git push`\u000d\u000a2. `npm publish`\u000d\u000a\u000d\u000a__除此之外，就是用npm本身对[Git URLs](https://docs.npmjs.com/files/package.json)的支持了（[《关于commit-ish》](https://github.com/cutsin/Passion-of-the-Cutsin/blob/master/2014/11/commit-ish%E4%B8%AD%E7%9A%84ish%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F.md)）：__\u000d\u000a```json\u000d\u000adependencies: {\u000d\u000a  \"mypkg\": \"git+https://mycopr/mypkg.git#commit-ish\"\u000d\u000a}\u000d\u000a```\u000d\u000a这样成本较低，但看不了依赖、被依赖、安装量等等\u000d\u000a\u000d\u000a## Usage\u000d\u000a\u000d\u000apackage.json：\u000d\u000a```json\u000d\u000a{\u000d\u000a  \"version\": \"0.1.8\"\u000d\u000a}\u000d\u000a```\u000d\u000a```bash\u000d\u000anpmgit publish 'bug fix'\u000d\u000a// -> git+git@mycorp:/mypkg.git#0.1.8 is published.\u000d\u000a```\u000d\u000aif git tag is package version，auto increment semver's patch to 0.1.9\u000d\u000a```bash\u000d\u000anpmgit publish\u000d\u000a// -> git+git@mycorp:/mypkg.git#0.1.9 is published.\u000d\u000a```\u000d\u000a\u000d\u000a## Todo\u000d\u000a\u000d\u000a## License\u000d\u000a\u000d\u000a[MIT](LICENSE)\u000d\u000a\u000d\u000a[npm-image]: https://img.shields.io/npm/v/npm-git.svg?style=flat\u000d\u000a[npm-url]: https://npmjs.org/package/npm-git\u000d\u000a[travis-image]: https://travis-ci.org/cutsin/npm-git.svg\u000d\u000a[travis-url]: https://travis-ci.org/cutsin/npm-git\u000d\u000a[downloads-image]: https://img.shields.io/npm/dm/npm-git.svg?style=flat\u000d\u000a[downloads-url]: https://npmjs.org/package/npm-git\u000d\u000a","readmeFilename":"README.md","gitHead":"c222d178273e12a63b191f06ffc8c0591c6bbb0d","_id":"npm-git@0.1.13","scripts":{},"_shasum":"6e060aa6574a03cb921bd60c7c8f04c77fc1513e","_from":".","_npmVersion":"2.5.1","_nodeVersion":"0.12.0","_npmUser":{"name":"cutsin","email":"cutsin@gmail.com"},"maintainers":[{"name":"cutsin","email":"cutsin@gmail.com"}],"dist":{"shasum":"6e060aa6574a03cb921bd60c7c8f04c77fc1513e","tarball":"http://registry.npmjs.org/npm-git/-/npm-git-0.1.13.tgz"}}: npm-git
+33 verbose stack     at CachingRegistryClient.<anonymous> (/home/vagrant/.nvm/versions/node/v0.12.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:254:14)
+33 verbose stack     at Request._callback (/home/vagrant/.nvm/versions/node/v0.12.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:178:14)
+33 verbose stack     at Request.self.callback (/home/vagrant/.nvm/versions/node/v0.12.0/lib/node_modules/npm/node_modules/request/request.js:344:22)
+33 verbose stack     at Request.emit (events.js:110:17)
+33 verbose stack     at Request.<anonymous> (/home/vagrant/.nvm/versions/node/v0.12.0/lib/node_modules/npm/node_modules/request/request.js:1239:14)
+33 verbose stack     at Request.emit (events.js:129:20)
+33 verbose stack     at IncomingMessage.<anonymous> (/home/vagrant/.nvm/versions/node/v0.12.0/lib/node_modules/npm/node_modules/request/request.js:1187:12)
+33 verbose stack     at IncomingMessage.emit (events.js:129:20)
+33 verbose stack     at _stream_readable.js:908:16
+33 verbose stack     at process._tickCallback (node.js:355:11)
+34 verbose statusCode 403
+35 verbose pkgid npm-git
+36 verbose cwd /vagrant/public/npm-git
+37 error Linux 2.6.32-431.el6.x86_64
+38 error argv "/home/vagrant/.nvm/versions/node/v0.12.0/bin/node" "/home/vagrant/.nvm/versions/node/v0.12.0/bin/npm" "publish"
+39 error node v0.12.0
+40 error npm  v2.5.1
+41 error code E403
+42 error forbidden cannot modify pre-existing version: 0.1.13
+42 error old={"name":"npm-git","version":"0.1.13","description":"Use git-repo(such as gitlab/bitbucket) for publish private package","preferGlobal":"true","bin":{"npmgit":"./bin/npmgit"},"engines":{"node":">=0.10"},"keywords":["npm","git","private","publish"],"repository":{"type":"git","url":"https://github.com/cutsin/npm-git"},"author":{"name":"Cutsin","email":"cutsin@gmail.com"},"license":"MIT","bugs":{"url":"https://github.com/cutsin/npm-git/issues"},"homepage":"https://github.com/cutsin/npm-git","dependencies":{"async":"~0.9.0","commander":"~2.6.0","git-tag":"~0.0.5","ini":"~1.3.2","semver":"~4.2.0"},"gitHead":"c222d178273e12a63b191f06ffc8c0591c6bbb0d","_id":"npm-git@0.1.13","scripts":{},"_shasum":"44d8f06a3864eecba20e1e01adc7480cac73bb0c","_from":".","_npmVersion":"2.5.1","_nodeVersion":"0.12.0","_npmUser":{"name":"cutsin","email":"cutsin@gmail.com"},"maintainers":[{"name":"cutsin","email":"cutsin@gmail.com"}],"dist":{"shasum":"44d8f06a3864eecba20e1e01adc7480cac73bb0c","tarball":"http://registry.npmjs.org/npm-git/-/npm-git-0.1.13.tgz"}}
+42 error new={"name":"npm-git","version":"0.1.13","description":"Use git-repo(such as gitlab/bitbucket) for publish private package","preferGlobal":"true","bin":{"npmgit":"./bin/npmgit"},"engines":{"node":">=0.10"},"keywords":["npm","git","private","publish"],"repository":{"type":"git","url":"https://github.com/cutsin/npm-git"},"author":{"name":"Cutsin","email":"cutsin@gmail.com"},"license":"MIT","bugs":{"url":"https://github.com/cutsin/npm-git/issues"},"homepage":"https://github.com/cutsin/npm-git","dependencies":{"async":"~0.9.0","commander":"~2.6.0","git-tag":"~0.0.5","ini":"~1.3.2","semver":"~4.2.0"},"readme":"# npm-git\u000d\u000a\u000d\u000a[![NPM Version][npm-image]][npm-url]\u000d\u000a[![NPM Downloads][downloads-image]][downloads-url]\u000d\u000a[![Build Status][travis-image]][travis-url]\u000d\u000a\u000d\u000a* use private git(gitLab,bitbucket,etc) instead of npm\u000d\u000a* use `npmgit publish` instead of `npm publish` command line, compile & push to your git repo\u000d\u000a\u000d\u000a## Install\u000d\u000a\u000d\u000a```\u000d\u000anpm install npm-git -g\u000d\u000a```\u000d\u000a\u000d\u000a## Why?\u000d\u000a\u000d\u000a想实现私有的npm，通常是2种方案：\u000d\u000a\u000d\u000a1. npmjs.com即将推出的：[npm private modules](https://www.npmjs.com/private-npm) & [npm Enterprise](https://www.npmjs.com/enterprise)\u000d\u000a\u000d\u000a\u0009* [npm private modules](https://www.npmjs.com/private-npm) 可指定有权使用package的用户，也就是你可以`npm publish @mycorp/mypkg`，而mypkg源码可以放在任何git仓库。\u000d\u000a\u0009* [npm Enterprise](https://www.npmjs.com/enterprise) 结合GitHub企业版，更完美了。\u000d\u000a\u000d\u000a2. [自建npm服务器](http://cnpmjs.org)，维护比较复杂，不推荐。\u000d\u000a\u000d\u000a而以上2种方案，都还是需要自行管理源码：git仓库，即开发者至少需要2步才能完成1个package的发布：\u000d\u000a\u000d\u000a1. `git commit && git push`\u000d\u000a2. `npm publish`\u000d\u000a\u000d\u000a__除此之外，就是用npm本身对[Git URLs](https://docs.npmjs.com/files/package.json)的支持了（[《关于commit-ish》](https://github.com/cutsin/Passion-of-the-Cutsin/blob/master/2014/11/commit-ish%E4%B8%AD%E7%9A%84ish%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F.md)）：__\u000d\u000a```json\u000d\u000adependencies: {\u000d\u000a  \"mypkg\": \"git+https://mycopr/mypkg.git#commit-ish\"\u000d\u000a}\u000d\u000a```\u000d\u000a这样成本较低，但看不了依赖、被依赖、安装量等等\u000d\u000a\u000d\u000a## Usage\u000d\u000a\u000d\u000apackage.json：\u000d\u000a```json\u000d\u000a{\u000d\u000a  \"version\": \"0.1.8\"\u000d\u000a}\u000d\u000a```\u000d\u000a```bash\u000d\u000anpmgit publish 'bug fix'\u000d\u000a// -> git+git@mycorp:/mypkg.git#0.1.8 is published.\u000d\u000a```\u000d\u000aif git tag is package version，auto increment semver's patch to 0.1.9\u000d\u000a```bash\u000d\u000anpmgit publish\u000d\u000a// -> git+git@mycorp:/mypkg.git#0.1.9 is published.\u000d\u000a```\u000d\u000a\u000d\u000a## Todo\u000d\u000a\u000d\u000a## License\u000d\u000a\u000d\u000a[MIT](LICENSE)\u000d\u000a\u000d\u000a[npm-image]: https://img.shields.io/npm/v/npm-git.svg?style=flat\u000d\u000a[npm-url]: https://npmjs.org/package/npm-git\u000d\u000a[travis-image]: https://travis-ci.org/cutsin/npm-git.svg\u000d\u000a[travis-url]: https://travis-ci.org/cutsin/npm-git\u000d\u000a[downloads-image]: https://img.shields.io/npm/dm/npm-git.svg?style=flat\u000d\u000a[downloads-url]: https://npmjs.org/package/npm-git\u000d\u000a","readmeFilename":"README.md","gitHead":"c222d178273e12a63b191f06ffc8c0591c6bbb0d","_id":"npm-git@0.1.13","scripts":{},"_shasum":"6e060aa6574a03cb921bd60c7c8f04c77fc1513e","_from":".","_npmVersion":"2.5.1","_nodeVersion":"0.12.0","_npmUser":{"name":"cutsin","email":"cutsin@gmail.com"},"maintainers":[{"name":"cutsin","email":"cutsin@gmail.com"}],"dist":{"shasum":"6e060aa6574a03cb921bd60c7c8f04c77fc1513e","tarball":"http://registry.npmjs.org/npm-git/-/npm-git-0.1.13.tgz"}}: npm-git
+43 error If you need help, you may report this error at:
+43 error     <http://github.com/npm/npm/issues>
+44 verbose exit [ 1, true ]
